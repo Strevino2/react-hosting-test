@@ -1,12 +1,15 @@
 import React from "react";
 
 export class ButtonClass extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props)
+  }
 
-    render() {
-        const { handleClick = () => console.log("I am Default"), label = "Default" } = props;
-        return <button onClick={this.props.handleClick}></button>
-    }
+  render() {
+    const {
+      label = "Default",
+      handleClick = () => console.log("I am default"),
+    } = this.props;
+    return <button onClick={handleClick}>{label}</button>;
+  }
 }
